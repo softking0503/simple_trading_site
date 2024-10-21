@@ -1,0 +1,1340 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Wix Madefor Text Variable', sans-serif;
+  background-color: #0d0e0f;
+  color: white;
+}
+
+/* Style the tab */
+.tab {
+  /* overflow: hidden; */
+  /* border: 1px solid #ccc; */
+  background-color: #222222;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #999999;
+}
+
+/* Style the tab content */
+.tabcontent {
+  /* display: none; */
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  /* border-top: none; */
+}
+
+
+
+
+
+
+
+/* Hide the horizontal scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 0;  /* Height set to 0 to hide horizontal scrollbar */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #1a1a2e; /* Dark background for the track */
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: #282759; /* Dark thumb color */
+  border-radius: 10px; /* Optional: Rounded corners for the thumb */
+}
+
+/* Optional: Add a hover effect for the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a7a; /* Lighter shade on hover for visibility */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  position: relative;
+  flex: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: #0d0e0f;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.nav-left{
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.balance-info {
+  border: 1px solid #282759; /* Add border with specified color and width */
+  display: flex;
+  align-items: center;
+  background-color: #121236; 
+  border-radius: 25px; 
+  height: 60px;
+}
+
+.balance-text {
+  padding-right: 5px;
+  margin-top: 4px;
+}
+
+.balance-value {
+  font-weight: 700;
+  color: #DCD9FF;
+  font-style: inherit;
+  font-size: 17px;
+  margin-right: 10x;
+}
+
+.user-icon img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.user-icon {
+  border-radius: 8px;
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative; /* Positioning context for the dropdown */
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Position below the icon */
+  right: 0; /* Align to the right of the icon */
+  background: rgb(25,24,62);background: linear-gradient(0deg, rgba(25,24,62,1) 0%, rgba(30,29,75,1) 76%, rgba(29,28,73,1) 100%);
+  min-width: 160px;z-index: 1;
+  border-radius: 20px;
+  width: 200px;
+  padding: 16px 24px;
+}
+.dropdown-content2 {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Position below the icon */
+  right: 0; /* Align to the right of the icon */
+  background: rgb(25,24,62);background: linear-gradient(0deg, rgba(25,24,62,1) 0%, rgba(30,29,75,1) 76%, rgba(29,28,73,1) 100%);
+  min-width: 160px;z-index: 1;
+  border-radius: 20px;
+  width: 200px;
+  padding: 16px 24px;
+}
+
+
+.pfp {
+  max-width: 35px;
+  border-radius: 20px;
+}
+
+.pfp-large{
+  border-radius: 50%;
+}
+
+.dropdown-content a {
+  color: #DCD9FF;
+  padding-bottom: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: #a8a3ff;
+}
+
+.user-icon img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.money-type{
+  color: #f4a070;
+}
+
+.money-unit{
+  color: #ed70f4;
+}
+
+.money-value{
+  color: #2fda65;
+}
+
+.order-panel{
+  background-color: #333333;
+  font-size: 18px;
+  border: white solid 1px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.trading-panel{
+  background-color: #16171a;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.credit {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.balance-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+
+/* Modal Styles */
+.modal {
+  /* display: none; */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #2d2d2d;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  color: #ffffff;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.currency-options {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.currency-option {
+  padding: 5px 10px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.currency-option.active {
+  background-color: #007bff;
+}
+
+.label {
+  margin-bottom: 5px;
+  color: #aaaaaa;
+}
+
+.address-box {
+  background-color: #1c1c1c;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copy-btn {
+  padding: 5px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.separator {
+  border: 0;
+  border-top: 1px solid transparent; /* Dark gray color for the line */
+  margin: 4px 0; /* Space above and below the line */
+}
+.separator2 {
+  border: 0;
+  border-top: 1px solid transparent; /* Dark gray color for the line */
+  margin: 2px 0; /* Space above and below the line */
+}
+
+
+.balance-info {
+  padding-right: 14px; 
+  padding-left: 14px;
+  height: 46px !important;
+}
+@font-face {
+  font-family: 'Wix Madefor Text Variable';
+  /* src: url('path-to-your-font-file.woff2') format('woff2'),
+       url('path-to-your-font-file.woff') format('woff'); */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.container1 {
+    display: flex;
+}
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 18px;
+    cursor: pointer;
+    background-color: #1C1E22;
+}
+
+#menu-icon {
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: none;
+    padding-left: 20px;
+    padding-top: 1px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: #3b3f45;
+}
+
+.icon {
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+}
+
+.menu-text {
+    display: none;
+}
+
+.content {
+  background-color: #2F3136;
+    padding: 30px;
+    width: 100%;
+}
+
+.deposit-header h1 {
+  margin: 0;
+  font-size: 21px;
+  color: #ffffff;
+  padding-bottom: 10px;
+}
+.deposit-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+}
+
+#user-info {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 10px; /* Space between elements */
+}
+
+#address-container {
+  padding: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row; /* Ensure row layout */
+  align-items: center; /* Vertically center items */
+  gap: 10px; /* Space between elements */
+}
+
+#address {
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+}
+
+#copy-icon {
+  cursor: pointer;
+  font-size: 18px; /* Adjust size as needed */
+  color: #007bff; /* Color of the icon */
+}
+
+#copy-icon:hover {
+  color: #0056b3; /* Color on hover */
+}
+
+#qr-code-container {
+  text-align: center; /* Center the QR code */
+}
+
+#qr-code {
+  max-width: 120px;
+  border-radius: 10px;
+  padding: 10px;
+  height: auto; /* Maintain aspect ratio */
+}
+.qr-add {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(23,24,27,.5);
+  display: flex; 
+  flex-direction: row;
+}
+
+
+select {
+  appearance: none;
+  background-color: #222; 
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  width: 150px;
+  cursor: pointer;
+  position: relative; 
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+select:hover {
+  background-color: #333;
+}
+select:focus::after {
+  color: #fff; /* Arrow color on focus */
+}
+
+.zaclose{
+  right: 0;
+  top: 0;
+}
+
+.closee{
+  width: 18px;
+  float: right;
+  transition: box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.closee:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Much larger shadow effect */
+}
+
+
+/* Network Selectors Container */
+#network-selectors {
+  gap: 40px;
+  display: flex; /* Align dropdowns in a row */
+  padding: 10px 0;
+}
+
+.network-selectors{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dropdown-network-selectors {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.choose {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color:#DCD9FF;
+  font-weight: 600;
+}
+
+.minimum-deposit {
+  color: #DCD9FF;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Include Font Awesome in your HTML head */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* Custom Dropdown Container */
+.custom-dropdown {
+    position: relative; /* Position options absolutely within container */
+    width: 200px; /* Width of the dropdown */
+}
+
+/* Dropdown Selected Box */
+.custom-dropdown-selected {
+  height: 50px;
+  color: #fff; /* White text */
+  cursor: pointer; /* Pointer cursor */
+  display: flex; /* Align text and arrow */
+  align-items: center; /* Center items vertically */}
+
+/* Font Awesome Arrow Styling */
+.custom-dropdown-arrow {
+    font-size: 12px; /* Adjust size */
+    color: #ccc; /* Light gray color */
+    transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+/* Rotate arrow when dropdown is open */
+.custom-dropdown.open .custom-dropdown-arrow {
+    transform: rotate(90deg); /* Rotate arrow */
+}
+
+/* Dropdown Options Container */
+.custom-dropdown-options {
+  width: 100%;
+  padding: 0 4px;
+  position: absolute; /* Position below selected box */
+  background-color: #1d1c49; /* Darker background for options */
+  border-radius: 10px; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears above other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for options */
+  max-height: 180px; /* Maximum height */
+  overflow-y: auto; /* Scroll if needed */
+}
+
+/* Show Dropdown on Click */
+.custom-dropdown.open .custom-dropdown-options {
+    display: block; /* Show options when open */
+    opacity: 1; /* Fade in */
+    transform: scaleY(1); /* Scale up */
+}
+
+/* Dropdown Option */
+.custom-dropdown-option {
+  padding: 10px 0;
+    display: flex; /* Align icon and text */
+    align-items: center; /* Center items vertically */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Option Icon */
+.option-icon {
+    max-width: 25px; /* Width of the icon */
+    max-height: 25px; /* Height of the icon */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Option Hover Effect */
+.custom-dropdown-option:hover {
+  border-radius: 7px;
+  background-color: #282759; /* Darker background on hover */
+  color: #fff; /* White text on hover */
+}
+
+
+
+/* General Container */
+.toggle-container-custom {
+  background-color: #1a1c2a; /* Matching dark theme */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+/* Toggle Buttons */
+.toggle-buttons-custom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-buttons-custom{
+  height: 50px;
+  background-color: #282759;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.toggle-button-custom {
+  width: 48%;
+  padding: 12px 12px 12px 12px;
+  background-color: transparent;
+  color: #6966A4;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Active Button */
+.toggle-button-custom.active {
+  background-color: #121236;
+}
+
+/* Hover and Focus Effects */
+.toggle-button-custom:hover,
+.toggle-button-custom:focus {
+  background-color: #121236;
+  outline: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button-custom:hover,
+.toggle-button-custom:focus {
+  background-color: #121236;
+  outline: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+
+/* Content Sections */
+.content-section-custom {
+  display: none;
+}
+
+.content-section-custom.active {
+  display: block;
+}
+
+/* Method and Network Styling */
+.method-icon-custom, .network-icon-custom {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4a4e69;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  margin-right: 10px;
+}
+
+
+.popup-modal {
+  position: fixed;
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.popup-modal-content {
+  margin: 7% auto;
+  border-radius: 20px;
+  background: linear-gradient(0deg, rgba(21,20,52,1) 0%, rgba(32,30,77,1) 23%, rgba(24,23,61,1) 70%, rgba(29,28,74,1) 100%);
+  padding: 22px;
+  max-width: 400px; /* Set a maximum width */
+  width: 90%; /* Ensure it scales down on small screens */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  transform: scale(0.7); /* Start smaller */
+  opacity: 0; /* Initially invisible */
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Smooth scale-up and fade-in */
+}
+
+.popup-modal-content.show {
+  transform: scale(1); /* Scale up to normal size */
+  opacity: 1; /* Fully visible */
+}
+
+.popup-close-btn:hover {
+  color: rgb(119, 119, 119);
+}
+
+.popup-content {
+  text-align: center;
+}
+
+
+
+
+/* Container */
+.withdraw-containerz {
+  width: 100%;
+  background-color: #1a1c2a;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Labels */
+.labelz {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #b0b0d9;
+  display: block;
+}
+
+/* Dropdown for Network */
+.network-dropdownz {
+  background-color: #282759;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  appearance: none; /* Removes default arrow */
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE2IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuMTExMTggMS4xMTExTDcuOTk5NTggNy45OTk1OC0xLjExMTEgNy4wODg4VjEuMTExMUwxLjExMTEgMS4xMTExWiIgZmlsbD0iI0ZGRTFENSIvPjwvc3ZnPg=='); /* Adds a custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.network-dropdownz option {
+  background-color: #1a1c2a;
+  color: #fff;
+}
+
+/* Focus state for the dropdown */
+.network-dropdownz:focus {
+  outline: none;
+  border: 1px solid #00c1ff; /* Optional: Add border when focused */
+}
+
+/* Styling for when the dropdown is open */
+.network-dropdownz option:hover {
+  background-color: #373a5a;
+}
+
+/* Adjusting height of the dropdown options */
+.network-dropdownz option {
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Input Wrapper */
+.input-wrapperz {
+  background-color: #282759;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.inputz {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  width: 80%;
+}
+
+.inputz:focus {
+  outline: none;
+}
+
+.iconz, .currencyz {
+  color: #00c1ff; /* Icon and currency color */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.network-namez {
+  color: white;
+  font-weight: bold;
+}
+
+/* Available Amount */
+.availablez {
+  font-size: 12px;
+  color: #8784b7;
+  text-align: right;
+}
+
+.available-valuez {
+  color: #00c1ff;
+}
+
+/* Memo Section */
+.memo-sectionz {
+  margin-bottom: 20px;
+}
+
+/* Receive Section */
+.receive-sectionz {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.to-receivez .valuez, .network-feez .fee-valuez {
+  color: #00c1ff;
+  font-weight: bold;
+}
+
+
+input.my-input::placeholder {
+  color: blue;
+}
+
+#myInput::placeholder {
+  color: green;
+}
+
+/* Hide spinners in Webkit browsers (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinners in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.razss{
+  display: flex; /* Enable flexbox layout */
+  justify-content: space-between; /* Space items between start and end */
+  align-items: center; /* Vertically center items */
+}
+
+.error-message {
+  color: #ff7d7d;
+  font-size: 11px;
+}
+
+.error-message2 {
+  color: #ff7d7d;
+  font-size: 11px; /* Adjust font size as needed */
+}
+
+.warning-text {
+  color: #ff0000; /* Text color matching the warning */
+  font-size: 12px; /* Font size */
+  margin: 0; /* Remove default margin */
+  line-height: 1.4; /* Line height for readability, adjust to reduce space between lines */
+  display: inline; /* Ensures text and icon are on the same line */
+  align-items: center; /* Center items vertically */
+}
+
+.warning-icon {
+  width: 20px; /* Size of the warning icon */
+  height: 20px;
+  vertical-align: middle;
+}
+
+/* Styling for dark mode main text with neon effect */
+.main-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e0e0e0; /* Light gray for good contrast */
+  background-color: #1f1f51;
+  padding: 15px;
+  border-radius: 8px; /* Slightly more rounded corners */
+  margin-bottom: 12px;
+}
+
+/* Neon text effect for strong emphasis */
+.main-text strong {
+  font-weight: 700;
+  color: #00ffcc; /* Neon cyan color for emphasis */
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.8), 0 0 12px rgba(0, 255, 204, 0.6); /* Cool neon glow */
+}
+
+
+
+
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .main-text {
+      font-size: 14px; /* Slightly smaller for mobile */
+      padding: 16px;
+  }
+
+  .main-text strong {
+      font-size: 16px; /* Keeping strong text large on mobile */
+  }
+}
+
+.warning-container {
+  font-weight: bold;
+  background: linear-gradient(135deg, #1d1c49, #2a2a6c); /* Dark blue to a slightly lighter blue */
+  padding: 10px; /* Compact padding */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(29, 28, 73, 0.6); /* Darker shadow for depth */
+  transition: all 0.3s ease;
+  color: white;
+  max-width: 350px; /* Keeps it compact horizontally */
+}
+
+/* Main container styling */
+.warning-container {
+  font-weight: bold;
+  background: linear-gradient(135deg, #661414, #8b233b); /* Dark red to dark maroon */
+  padding: 10px; /* Compact padding */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(139, 35, 59, 0.6); /* Darker shadow for depth */
+  transition: all 0.3s ease;
+  color: white;
+  max-width: 350px; /* Keeps it compact horizontally */
+}
+
+/* Icon styling */
+.warning-icon {
+  width: 20px;
+  height: 20px; /* Smaller size for compact design */
+  margin-right: 10px; /* Reduced margin */
+}
+
+/* Text styling */
+.warning-text {
+  font-size: 12px; /* Smaller font size for a compact look */
+  line-height: 1.4;
+  color: #ddd; /* Softer white for better readability on dark background */
+  display: flex;
+  align-items: center;
+}
+
+/* Highlighting the important text */
+.warning-text strong {
+  color: #ff6666; /* Darker red to emphasize 'DON'T' */
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Light shadow for clarity */
+}
+
+/* Hover effect */
+.warning-container:hover {
+  box-shadow: 0 6px 16px rgba(139, 35, 59, 0.8); /* Darker, stronger shadow on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .warning-container {
+      max-width: 90%;
+  }
+
+  .warning-text {
+      font-size: 10px; /* Even smaller for mobile */
+  }
+
+  .warning-icon {
+      width: 18px;
+      height: 18px;
+  }
+}
+
+/* Withdraw Button */
+.withdraw-button33 {
+  margin: 20px 0;
+  height: 50px;
+  width: 100%;
+  background-image: linear-gradient(to right, \rgb(142, 131, 251), rgb(93, 82, 238));;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.deposit-btn {
+  background-color: #6b46c1;
+  color: #fff;
+  padding: 10px 15px 10px 15px;
+  height:50px !important;
+  width: 116px;
+  background-image: linear-gradient(to right, \rgb(142, 131, 251), rgb(93, 82, 238));;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.withdraw-button33:disabled {
+  background-color: #d3d3d3; /* Light gray background color */
+  color: #a9a9a9; /* Darker gray text color */
+  cursor: not-allowed; /* Cursor style for disabled button */
+}
+
+.withdraw-button33 {
+  background-color: #007bff; /* Default background color */
+  color: #ffffff; /* Default text color */
+  cursor: pointer; /* Cursor style for enabled button */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+.withdraw-button33:enabled:hover {
+  background-color: #0056b3; 
+  border-color: #004085; /* Darker border on hover */
+}
+.minimum-deposit {
+  display: flex;
+  align-items: center; /* Vertically center-align items */
+}
+
+.warning-icon {
+  width: 20px;
+  margin-right: 6px; /* Space between icon and text */
+}
+
+.minimum-deposit-text {
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+@media screen and (max-width: 339px) {
+  .deposit-btn {
+    display: none;
+  }
+}
+.color-button {
+  width: 100px;
+  height: 50px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.selected {
+  border: 3px solid gold; /* Highlight selected button */
+  box-shadow: 0px 0px 15px rgba(255, 223, 0, 0.7); /* Add a glowing effect */
+}
+
+.unselected {
+  opacity: 0.5; /* Dim the unselected button */
+}
+
+#play-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#play-button:hover {
+  background-color: #555;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.color-button {
+  width: 100px;
+  height: 50px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.selected {
+  border: 3px solid gold; /* Highlight selected button */
+  box-shadow: 0px 0px 15px rgba(255, 223, 0, 0.7); /* Add a glowing effect */
+}
+
+.unselected {
+  opacity: 0.5; /* Dim the unselected button */
+}
+
+#play-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#play-button:hover {
+  background-color: #555;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.slot-machine {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 1200px;
+    height: 100px;
+    border-radius: 10px;
+    transform: scale(1.3); /* Scale contents normally */
+}
+
+@media (max-width: 1450px) {
+  .slot-machine {
+    position: absolute;
+    z-index: 1;
+    transform: scale(1.2);
+  }
+}
+@media (max-width: 1300px) {
+  .slot-machine {
+    transform: scale(1);
+  }
+}
+@media (max-width: 700px) {
+  .slot-machine {
+    transform: scale(0.9);
+  }
+}
+
+
+.slot {
+    display: flex;
+    white-space: nowrap;
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background-size: cover;
+    display: inline-block;
+}
+
+.center-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: yellow;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.icon.blue{
+  padding: 3px;
+  background-color: transparent;
+}
+.icon.red{
+  padding: 3px;
+  background-color: transparent;
+}
+.icon.green{
+  padding: 3px;
+  background-color: transparent;
+}
+
+.blue {
+  display: flex; /* Use flexbox to enable centering */
+  justify-content: center; /* Horizontally centers the image */
+  align-items: center; /* Vertically centers the image */
+  overflow: hidden;
+  height: 75px;
+  margin-top: -1px;
+  border-radius: 15px;
+  background-color: #2f2fda;
+}
+.red {
+  display: flex; /* Use flexbox to enable centering */
+  justify-content: center; /* Horizontally centers the image */
+  align-items: center; /* Vertically centers the image */
+  overflow: hidden;
+  height: 75px;
+  margin-top: -1px;
+  border-radius: 15px;
+  background-color: #ea5050;
+}
+.green{
+  display: flex; /* Use flexbox to enable centering */
+  justify-content: center; /* Horizontally centers the image */
+  align-items: center; /* Vertically centers the image */
+  overflow: hidden;
+  height: 75px;
+  margin-top: -1px;
+  border-radius: 15px;
+  background-color: #2fda65;
+}
+
+
+.shields {
+  width: 75%;
+  height: auto; /* Maintain the aspect ratio */
+}
+
+
+#user-icon2:hover span {
+  color: #4281ff !important; /* Override inline style */
+}
+
+
+
+.chart {
+  position: relative;
+  overflow: hidden; /* Prevent elements from overflowing */
+
+  background-color: #16171a;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 30px;
+  height: 1000px;
+  height: 2000px;
+  }
+
+.chart-container {
+  display: none; /* Hide charts initially */
+  height: calc(100% - 32px);
+  width: 100%;
+}
+.active {
+  display: block; /* Show active chart */
+}
+.timeframes {
+  display: flex; /* Flexbox layout for timeframes */
+  justify-content: center; /* Center align items */
+  margin: 10px 0; /* Space around timeframe buttons */
+}
+.timeframe-button {
+  margin: 0 5px; /* Space between buttons */
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.timeframe-button:hover {
+  background-color: #555; /* Darker on hover */
+}
+.timeframe-button.active {
+  background-color: #007BFF; /* Highlight active button */
+}
+.modal {
+  /* display: none; Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 25%; /* Could be more or less, depending on screen size */
+}
