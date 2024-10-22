@@ -105,7 +105,7 @@ const Trading = () => {
 
     const closeFuturesPosition = async (position, reason) => {
         try {
-            const response = await fetch('http://localhost:5000+/position/closeFuturesPosition', {
+            const response = await fetch('http://localhost:5001+/position/closeFuturesPosition', {
                 method: 'POST',
                 headers: {
                     Authorization: 'Bearer ' + localStorage.getItem('token'),
@@ -164,7 +164,7 @@ const Trading = () => {
             closeFuturesPosition(closingPosition, 0);
         } else {
             try {
-                const response = await fetch('http://localhost:5000/api/partialClosePosition', {
+                const response = await fetch('http://localhost:5001/api/partialClosePosition', {
                     method: 'POST',
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem('token'),
@@ -200,7 +200,7 @@ const Trading = () => {
 
     const fetchUserData = async () => {
         try {
-            const balanceResponse = await fetch("http://localhost:5000/api/balance/getBalance", {
+            const balanceResponse = await fetch("http://localhost:5001/api/balance/getBalance", {
                 method: "POST",
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token"),
@@ -216,7 +216,7 @@ const Trading = () => {
             // Spot balances and prices
             let updatedSpotBalances = [balanceData.spotUSDTBalance];
 
-            const priceResponse = await fetch("http://localhost:5000/api/market/getCurrentPrice", {
+            const priceResponse = await fetch("http://localhost:5001/api/market/getCurrentPrice", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
             });
@@ -226,7 +226,7 @@ const Trading = () => {
             setCurrentPrices(priceData.currentPrices);
 
             // Update Futures and Spot Data
-            const positionsResponse = await fetch("http://localhost:5000/api/position/getPositions", {
+            const positionsResponse = await fetch("http://localhost:5001/api/position/getPositions", {
                 method: "POST",
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token"),
@@ -304,7 +304,7 @@ const Trading = () => {
             setTotalValue(totalValue);
 
             // Updating server with latest values
-            await fetch("http://localhost:5000/api/updateValue", {
+            await fetch("http://localhost:5001/api/updateValue", {
                 method: "POST",
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token"),
@@ -413,7 +413,7 @@ const Trading = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const balanceResponse = await fetch("http://localhost:5000/api/balance/getBalance", {
+                const balanceResponse = await fetch("http://localhost:5001/api/balance/getBalance", {
                     method: "POST",
                     headers: {
                         Authorization: "Bearer " + localStorage.getItem("token"),
@@ -424,7 +424,7 @@ const Trading = () => {
                 setFuturesUSDTBalance(balanceData.futuresUSDTBalance);
                 setSpotUSDTBalance(balanceData.spotUSDTBalance);
 
-                const priceResponse = await fetch("http://localhost:5000/api/market/getCurrentPrice", {
+                const priceResponse = await fetch("http://localhost:5001/api/market/getCurrentPrice", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                 });
@@ -469,7 +469,7 @@ const Trading = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/api/position/openFuturesPosition", {
+            const response = await fetch("http://localhost:5001/api/position/openFuturesPosition", {
                 method: "POST",
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token"),
@@ -527,7 +527,7 @@ const Trading = () => {
                 console.log(futuresUSDTBalance, spotUSDTBalance);
             }
         }
-        fetch("http://localhost:5000/api/balance/updateBalance", {
+        fetch("http://localhost:5001/api/balance/updateBalance", {
             method: "POST",
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token"),
@@ -548,7 +548,7 @@ const Trading = () => {
     useEffect(() => {
         const loadUserData = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/balance/getBalance", {
+                const response = await fetch("http://localhost:5001/api/balance/getBalance", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -586,7 +586,7 @@ const Trading = () => {
         if (isWithdrawDisabled) return;
 
         try {
-            const response = await fetch('http://localhost:5000/api/withdraw/withdrawRequest', {
+            const response = await fetch('http://localhost:5001/api/withdraw/withdrawRequest', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

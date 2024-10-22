@@ -14,8 +14,8 @@ const AuthForm = ({ type }) => {
         }
         try {
             const url = type === 'login'
-                ? 'http://localhost:5000/auth/login'
-                : 'http://localhost:5000/auth/register';
+                ? 'http://localhost:5001/auth/login'
+                : 'http://localhost:5001/auth/register';
             const body = type === 'login'
                 ? { username, password }
                 : { username, password, confirmPassword };
